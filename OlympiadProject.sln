@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympiadProject", "OlympiadProject\OlympiadProject.csproj", "{51C4BD15-C0EB-4F1B-B64B-360D65D1E60C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympiadDatabase", "OlympiadDatabase\OlympiadDatabase.csproj", "{FCA2FF4E-61E3-497B-BE47-02A5E4742186}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{51C4BD15-C0EB-4F1B-B64B-360D65D1E60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C4BD15-C0EB-4F1B-B64B-360D65D1E60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51C4BD15-C0EB-4F1B-B64B-360D65D1E60C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA2FF4E-61E3-497B-BE47-02A5E4742186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA2FF4E-61E3-497B-BE47-02A5E4742186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA2FF4E-61E3-497B-BE47-02A5E4742186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA2FF4E-61E3-497B-BE47-02A5E4742186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
