@@ -17,6 +17,6 @@ namespace OlympiadDatabase.Classes
         public string ThirdName { get; set; }
         public int CountryID { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string PhotoPath { get; set; }
+        public string PhotoPathh { get; set; }
     }
 }
