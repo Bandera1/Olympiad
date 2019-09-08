@@ -10,5 +10,10 @@ namespace OlympiadDatabase.Classes
     {
         public int ID { get; set; }
         public bool Status { get; set; }
+
+        public EntityBase()
+        {
+            Status = true;
+        }
     }
 }

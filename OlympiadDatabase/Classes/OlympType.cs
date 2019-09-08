@@ -10,6 +10,7 @@ namespace OlympiadDatabase.Classes
     public class OlympType : EntityBase
     {
         [StringLength(70)]
+        [Required]
         public string Name { get; set; }
     }
 }

@@ -50,11 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Countries.cs" />
+    <Compile Include="Classes\City.cs" />
+    <Compile Include="Classes\Country.cs" />
     <Compile Include="Classes\EntityBase.cs" />
+    <Compile Include="Classes\Olympiad.cs" />
+    <Compile Include="Classes\OlympResult.cs" />
     <Compile Include="Classes\OlympType.cs" />
-    <Compile Include="Classes\Persons.cs" />
-    <Compile Include="Classes\SportsType.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\SportType.cs" />
     <Compile Include="OlympiadContext\OlympiadContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,7 +65,9 @@
     <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
