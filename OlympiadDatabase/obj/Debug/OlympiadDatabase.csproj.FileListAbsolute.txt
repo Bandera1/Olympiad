@@ -22,3 +22,17 @@ C:\Users\Vlad\Desktop\OlympiadProject\OlympiadDatabase\obj\Debug\OlympiadDatabas
 C:\Users\Vlad\Desktop\OlympiadProject\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.CopyComplete
 C:\Users\Vlad\Desktop\OlympiadProject\OlympiadDatabase\obj\Debug\OlympiadDatabase.dll
 C:\Users\Vlad\Desktop\OlympiadProject\OlympiadDatabase\obj\Debug\OlympiadDatabase.pdb
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\OlympiadDatabase.dll.config
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\OlympiadDatabase.dll
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\OlympiadDatabase.pdb
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\EntityFramework.dll
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\EntityFramework.xml
+D:\GitHubRepos\Olympiad\OlympiadDatabase\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csprojAssemblyReference.cache
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.CoreCompileInputs.cache
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.CopyComplete
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.dll
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.pdb
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.Migrations.Init.resources
+D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.GenerateResource.cache
