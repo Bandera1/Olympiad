@@ -23,6 +23,27 @@ namespace OlympiadProject.Windows
         public SecretWindow()
         {
             InitializeComponent();
+            PasswordBox.Focus();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(PasswordBox.Password == "GODDAM")
+            {
+                MessageBox.Show("Welcome to the world of new opportunities.");
+                AdminWindow window = new AdminWindow();
+                this.Hide();
+                window.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void PasswordBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter)
+                return;
+
+            Button_Click(null, null);
         }
     }
 }

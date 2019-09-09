@@ -76,3 +76,5 @@ D:\GitHubRepos\Olympiad\OlympiadProject\bin\Debug\MahApps.Metro.xml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\App.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\SecretWindow.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\SecretWindow.baml
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminWindow.g.cs
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminWindow.baml

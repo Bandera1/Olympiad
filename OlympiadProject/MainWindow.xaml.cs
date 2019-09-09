@@ -59,8 +59,6 @@ namespace OlympiadProject
 
         private void ChangeThemeButton_Click(object sender, RoutedEventArgs e)
         {
-            
-
             if (Theme)
             {
                 Theme = false;
@@ -79,12 +77,10 @@ namespace OlympiadProject
             }
            
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OtherInfoFlyout.IsOpen = true;
         }
-
         private void LockButton_Click(object sender, RoutedEventArgs e)
         {
             SecretWindow window = new SecretWindow();
@@ -96,6 +92,7 @@ namespace OlympiadProject
 
         private void InitUI()
         {
+            InitTopBlock();
             InitLockButton();
             InitMedalStandings();
             InitSportsMedalists();
@@ -105,6 +102,10 @@ namespace OlympiadProject
             InitCompositionOfOlympTeam();
         }
 
+        private void InitTopBlock()
+        {
+
+        }
         private void InitLockButton()
         {
             var image = new Image();

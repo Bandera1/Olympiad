@@ -1,0 +1,85 @@
+﻿<Metro:MetroWindow x:Class="OlympiadProject.Windows.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:OlympiadProject.Windows"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="550" ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.12*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Height="40" Orientation="Horizontal" VerticalAlignment="Top" Background="GhostWhite">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="OrangeRed"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </StackPanel.Resources>
+
+                <TextBlock Text="Olymp types:"  Margin="4"/>
+                <TextBlock Text="{Binding OlympTypesCount}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="Countries:" Margin="6"/>
+                <TextBlock Text="{Binding CountriesCountr}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="Cities:" Margin="6"/>
+                <TextBlock Text="{Binding CitiesCount}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="Sport types:" Margin="6"/>
+                <TextBlock Text="{Binding SportTypeCount}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="Persons:" Margin="6"/>
+                <TextBlock Text="{Binding PersonCOunt}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="Olympiads:" Margin="6"/>
+                <TextBlock Text="{Binding OlympiadCount}" Foreground="Green" Margin="3"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="1" Name="TestDataGrid" 
+                  CanUserResizeColumns="False" 
+                  CanUserResizeRows="False" 
+                  IsReadOnly="True" 
+                  HorizontalContentAlignment="Stretch" 
+                  HorizontalAlignment="Stretch" 
+                  AutoGenerateColumns="False" 
+                  HorizontalGridLinesBrush="DarkGray" 
+                  AlternatingRowBackground="White">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGrid">
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Olympiad" Binding="{Binding Path=Int}" Width="1*"/>
+                    <DataGridTextColumn Header="Sport type" Binding="{Binding Path=Lol}"  Width="1*"/>
+                    <DataGridTextColumn Header="City" Binding="{Binding Path=S}" Width="1*"/>
+                    <DataGridTextColumn Header="Person" Binding="{Binding Path=S}" Width="1*"/>
+                    <DataGridTextColumn Header="Place" Binding="{Binding Path=S}" Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Grid.Row="2" Content="Other features" Click="Flyout_Open" FontSize="16" VerticalContentAlignment="Stretch"/>
+
+           
+        </Grid>
+        <Metro:Flyout Name="OtherFeaturesFlyout" Position="Bottom" Height="350">
+            <StackPanel Orientation="Vertical">
+                <Button Content="Add Olymp type" Margin="5"/>
+                <Button Content="Add Country" Margin="5"/>
+                <Button Content="Add City" Margin="5"/>
+                <Button Content="Add Sport type" Margin="5"/>
+                <Button Content="Add Person" Margin="5"/>
+                <Button Content="Add Olympiad" Margin="5"/>
+                <Button Content="Add OlympResultNode" Background="IndianRed" Margin="5"/>
+            </StackPanel>
+        </Metro:Flyout>
+    </Grid>
+</Metro:MetroWindow>

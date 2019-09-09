@@ -65,10 +65,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OlympiadContext\OlympiadContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\OlympiadService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
