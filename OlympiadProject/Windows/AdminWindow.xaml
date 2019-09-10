@@ -14,7 +14,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Height="40" Orientation="Horizontal" VerticalAlignment="Top" Background="GhostWhite">
+            <StackPanel Name="TopCountsStackPanel" Grid.Row="0" Height="40" Orientation="Horizontal" VerticalAlignment="Top" Background="GhostWhite">
                 <StackPanel.Resources>
                     <Style TargetType="TextBlock">
                         <Setter Property="FontSize" Value="12"/>
@@ -33,13 +33,13 @@
                 <TextBlock Text="Olymp types:"  Margin="4"/>
                 <TextBlock Text="{Binding OlympTypesCount}" Foreground="Green" Margin="3"/>
                 <TextBlock Text="Countries:" Margin="6"/>
-                <TextBlock Text="{Binding CountriesCountr}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="{Binding CountriesCount}" Foreground="Green" Margin="3"/>
                 <TextBlock Text="Cities:" Margin="6"/>
                 <TextBlock Text="{Binding CitiesCount}" Foreground="Green" Margin="3"/>
                 <TextBlock Text="Sport types:" Margin="6"/>
                 <TextBlock Text="{Binding SportTypeCount}" Foreground="Green" Margin="3"/>
                 <TextBlock Text="Persons:" Margin="6"/>
-                <TextBlock Text="{Binding PersonCOunt}" Foreground="Green" Margin="3"/>
+                <TextBlock Text="{Binding PersonCount}" Foreground="Green" Margin="3"/>
                 <TextBlock Text="Olympiads:" Margin="6"/>
                 <TextBlock Text="{Binding OlympiadCount}" Foreground="Green" Margin="3"/>
             </StackPanel>
