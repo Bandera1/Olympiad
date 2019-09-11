@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\GitHubRepos\Olympiad\OlympiadProject\App.xaml
-31017318571
+4831387007
 
-11608576383
+12132197282
 20-191084401
-MainWindow.xaml;Windows\AdminWindow.xaml;Windows\SecretWindow.xaml;
+MainWindow.xaml;Windows\AdminsWindows\AddOlympTypeWindow.xaml;Windows\AdminsWindows\AdminWindow.xaml;Windows\SecretWindow.xaml;
 
-True
+False
 

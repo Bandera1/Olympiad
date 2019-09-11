@@ -72,7 +72,7 @@
         </Grid>
         <Metro:Flyout Name="OtherFeaturesFlyout" Position="Bottom" Height="350">
             <StackPanel Orientation="Vertical">
-                <Button Content="Add Olymp type" Margin="5"/>
+                <Button Content="Add Olymp type" Margin="5" Click="AddOlympTypeClick"/>
                 <Button Content="Add Country" Margin="5"/>
                 <Button Content="Add City" Margin="5"/>
                 <Button Content="Add Sport type" Margin="5"/>

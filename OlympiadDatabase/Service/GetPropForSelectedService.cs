@@ -12,7 +12,7 @@ namespace OlympiadDatabase.Service
     {
         OlympiadContext db = new OlympiadContext();
 
-        public List<SportType> GetSports(bool AsNoTracking = false)
+        public List<SportType> GetSportsTypes(bool AsNoTracking = false)
         {
             return AsNoTracking ? db.SportTypes.AsNoTracking().ToList() : db.SportTypes.ToList();
         }

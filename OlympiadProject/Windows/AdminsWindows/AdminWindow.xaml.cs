@@ -2,6 +2,7 @@
 using MahApps.Metro.Controls;
 using OlympiadDatabase.Classes;
 using OlympiadDatabase.Service;
+using OlympiadProject.Windows.AdminsWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,10 +58,9 @@ namespace OlympiadProject.Windows
 
             try
             {
-                GetCountsService<OlympType> getOlympTypeCount = new GetCountsService<OlympType>();
-                MessageBox.Show("LOL");
-                TablesCounts.OlympTypesCount = getOlympTypeCount.GetCount();
-                if (TablesCounts.OlympiadCount == null) TablesCounts.OlympiadCount = 0;
+                //GetCountsService<OlympType> getOlympTypeCount = new GetCountsService<OlympType>();
+                //TablesCounts.OlympTypesCount = getOlympTypeCount.GetCount();
+                //if (TablesCounts.OlympiadCount == null) TablesCounts.OlympiadCount = 0;
 
                 //GetCountsService<Country> getCountryCount = new GetCountsService<Country>();
                 //TablesCounts.CountriesCount = getCountryCount.GetCount();
@@ -86,13 +86,16 @@ namespace OlympiadProject.Windows
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-            }
-
-            
-
-
+            }          
 
             TopCountsStackPanel.DataContext = TablesCounts;
+        }
+
+        private void AddOlympTypeClick(object sender, RoutedEventArgs e)
+        {
+            AddOlympTypeWindow window = new AddOlympTypeWindow();
+
+            window.ShowDialog();              
         }
     }
 
