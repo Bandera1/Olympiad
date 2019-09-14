@@ -19,12 +19,12 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
     /// <summary>
     /// Interaction logic for AddOlympiadService.xaml
     /// </summary>
-    public partial class AddOlympiadService : Window
+    public partial class AddOlympiadWindow : Window
     {
         private List<Country> Countries;
         private List<OlympType> OlympTypes;
 
-        public AddOlympiadService()
+        public AddOlympiadWindow()
         {
             InitializeComponent();
 

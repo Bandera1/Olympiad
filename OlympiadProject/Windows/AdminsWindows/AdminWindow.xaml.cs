@@ -89,20 +89,38 @@ namespace OlympiadProject.Windows
 
         private void AddOlympTypeClick(object sender, RoutedEventArgs e)
         {
-            AddOlympTypeWindow window = new AddOlympTypeWindow();
-            window.ShowDialog();
+            try
+            {
+                AddOlympTypeWindow window = new AddOlympTypeWindow();
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {                
+            }            
             InitUI();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddCountryWindow window = new AddCountryWindow();
-            window.ShowDialog();
+            try
+            {
+                AddCountryWindow window = new AddCountryWindow();
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {                
+            }          
             InitUI();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            AddCityWindow window = new AddCityWindow();
-            window.ShowDialog();
+            try
+            {
+                AddCityWindow window = new AddCityWindow();
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {
+            }         
             InitUI();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -127,7 +145,7 @@ namespace OlympiadProject.Windows
         {
             try
             {
-                AddOlympTypeWindow window = new AddOlympTypeWindow();
+                AddOlympiadWindow window = new AddOlympiadWindow();
                 window.ShowDialog();
             }
             catch (Exception)

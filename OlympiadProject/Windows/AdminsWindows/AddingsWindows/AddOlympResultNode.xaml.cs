@@ -23,7 +23,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
     {
         private List<TemplateOlympiadName> Olympiads;
         private List<SportType> SportTypes;
-        private List<City> Cities;
+        // List<City> Cities;
         private List<Person> Persons;
 
         public AddOlympResultNode()
@@ -34,10 +34,14 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
 
             Olympiads = RemakeOlymp(getService.GetOlympiads());
             SportTypes = getService.GetSportTypes();
-            Cities = getService.GetCities();
+            //Cities = getService.GetCities();
             Persons = getService.GetPersons();
 
             DataCheck();
+
+            OlympiadComboBox.ItemsSource = Olympiads;
+            SportTypeComboBox.ItemsSource = SportTypes;
+            PersonComboBox.ItemsSource = Persons;
 
             this.DataContext = this;
         }
@@ -46,12 +50,17 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         {
             OlympResult newType = new OlympResult();
 
+            newType.Olympiad = OlympiadComboBox.SelectedItem as Olympiad;
+            newType.SportType = SportTypeComboBox.SelectedItem as SportType;
+            newType.Person = PersonComboBox.SelectedItem as Person;
+            newType.Place = Convert.ToInt32(PlaceTextBox.Text);
+
             GetPropForSelectedService getService = new GetPropForSelectedService();
             foreach (var or in getService.GetOlympsResult())
             {
                 if(or.Olympiad.Date == newType.Olympiad.Date)
                     if(or.SportType.Name == newType.SportType.Name)
-                        if(or.City.Name == newType.City.Name)
+                        //if(or.City.Name == newType.City.Name)
                             if(or.Person.FirstName == newType.Person.FirstName)
                                 if (or.Person.SecondName == newType.Person.SecondName)
                                     if (or.Person.ThirdName == newType.Person.ThirdName)
@@ -83,13 +92,13 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
                 this.Close();
                 return;
             }
-            if(Cities.Count <= 0)
-            {
-                this.Hide();
-                MessageBox.Show("Add cities first.");
-                this.Close();
-                return;
-            }
+            //(Cities.Count <= 0)
+            //{
+            //    this.Hide();
+            //    MessageBox.Show("Add cities first.");
+            //    this.Close();
+            //    return;
+            //}
             if(Persons.Count <= 0)
             {
                 this.Hide();
@@ -109,6 +118,14 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             }
 
             return returnList;
+        }
+
+        private void OlympiadComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GetPropForSelectedService getService = new GetPropForSelectedService();
+
+            PersonComboBox.ItemsSource = getService.GetPersons()
+                .Where(x => x.Country.Name == (OlympiadComboBox.SelectedValue as Olympiad).Country.Name);
         }
     }
 

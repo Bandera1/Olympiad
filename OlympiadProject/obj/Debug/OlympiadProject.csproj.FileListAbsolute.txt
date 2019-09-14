@@ -82,13 +82,13 @@ D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsW
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympTypeWindow.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddCountryWindow.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddCityWindow.g.cs
-D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadService.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddSportTypeWindow.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddPersonWindow.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddCityWindow.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddCountryWindow.baml
-D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadService.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddSportTypeWindow.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddPersonWindow.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.baml
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.g.cs
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.baml

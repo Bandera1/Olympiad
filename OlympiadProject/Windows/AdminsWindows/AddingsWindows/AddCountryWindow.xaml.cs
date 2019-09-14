@@ -48,7 +48,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             AddingService service = new AddingService();
             service.AddCountry(newType);
 
-            MessageBox.Show("New olymp type added.");
+            MessageBox.Show("New country added.");
         }
     }
 }

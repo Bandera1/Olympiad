@@ -16,9 +16,9 @@ namespace OlympiadDatabase.Classes
         [Required]
         [ForeignKey("SportType")]
         public int SportTypeID { get; set; }
-        [Required]
-        [ForeignKey("City")]
-        public int CityID { get; set; }
+        //[Required]
+        //[ForeignKey("City")]
+        //public int CityID { get; set; }
         [Required]
         [ForeignKey("Person")]
         public int PersonID { get; set; }
@@ -29,7 +29,7 @@ namespace OlympiadDatabase.Classes
         public virtual Olympiad Olympiad { get; set; }
         public virtual OlympType OlympiadType { get; set; }
         public virtual SportType SportType { get; set; }
-        public virtual City City { get; set; }
+        //public virtual City City { get; set; }
         public virtual Person Person { get; set; }
     }
 }

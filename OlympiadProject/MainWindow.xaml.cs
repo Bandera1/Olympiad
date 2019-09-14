@@ -1,6 +1,5 @@
 ﻿using MahApps.Metro;
 using MahApps.Metro.Controls;
-using OlympiadDatabase.Migrations;
 using OlympiadProject.Windows;
 using System;
 using System.Collections.Generic;

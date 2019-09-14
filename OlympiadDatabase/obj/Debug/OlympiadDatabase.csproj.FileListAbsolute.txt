@@ -34,5 +34,3 @@ D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.CoreC
 D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.CopyComplete
 D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.dll
 D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.pdb
-D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.Migrations.Init.resources
-D:\GitHubRepos\Olympiad\OlympiadDatabase\obj\Debug\OlympiadDatabase.csproj.GenerateResource.cache

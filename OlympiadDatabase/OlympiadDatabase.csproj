@@ -58,11 +58,6 @@
     <Compile Include="Classes\OlympType.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\SportType.cs" />
-    <Compile Include="Migrations\201909080943188_Init.cs" />
-    <Compile Include="Migrations\201909080943188_Init.Designer.cs">
-      <DependentUpon>201909080943188_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OlympiadContext\OlympiadContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AddingService.cs" />
@@ -76,11 +71,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909080943188_Init.resx">
-      <DependentUpon>201909080943188_Init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

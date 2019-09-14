@@ -77,8 +77,8 @@
     <Compile Include="Windows\AdminsWindows\AddingsWindows\AddCountryWindow.xaml.cs">
       <DependentUpon>AddCountryWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadService.xaml.cs">
-      <DependentUpon>AddOlympiadService.xaml</DependentUpon>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.xaml.cs">
+      <DependentUpon>AddOlympiadWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.xaml.cs">
       <DependentUpon>AddOlympResultNode.xaml</DependentUpon>
@@ -118,7 +118,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadService.xaml">
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

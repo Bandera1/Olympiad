@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympiadProject.Windows.AdminsWindows.AddingsWindows"
         mc:Ignorable="d"
-        Title="Add olymp result" ResizeMode="NoResize" Height="360" Width="400">
+        Title="Add olymp result" ResizeMode="NoResize" Height="310" Width="400">
     <StackPanel>
         
         <TextBlock Text="Olympiad" FontSize="16" Margin="3" HorizontalAlignment="Center"/>
-        <ComboBox Name="OlympiadComboBox" Width="300">
+        <ComboBox Name="OlympiadComboBox" Width="300" SelectionChanged="OlympiadComboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -24,24 +24,25 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock Text="City" FontSize="16" Margin="3" HorizontalAlignment="Center"/>
-        <ComboBox Name="CityComboBox" Width="300">
+        <!--<TextBlock Text="City" FontSize="16" Margin="3" HorizontalAlignment="Center"/>-->
+        <!--<ComboBox Name="CityComboBox" Width="300">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <TextBlock Text="Person" FontSize="16" Margin="3" HorizontalAlignment="Center"/>-->
         <TextBlock Text="Person" FontSize="16" Margin="3" HorizontalAlignment="Center"/>
         <ComboBox Name="PersonComboBox" Width="300">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="{Binding ThirdName}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock Text="Place" FontSize="16" Margin="3" HorizontalAlignment="Center"/>
-        <TextBox Width="100" Margin="3"/>
+        <TextBox Name="PlaceTextBox" Width="100" Margin="3"/>
         <Button Content="Add olymp result"  Margin="10" FontSize="20" Click="Add_Click" />
     </StackPanel>
 </Window>

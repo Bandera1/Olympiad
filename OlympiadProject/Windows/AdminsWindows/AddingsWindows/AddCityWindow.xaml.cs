@@ -32,6 +32,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             if(getService.GetCountry(true).Count <= 0)
             {
                 MessageBox.Show("Add country first.");
+                this.Close();
                 return;
             }
 
@@ -59,7 +60,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             AddingService service = new AddingService();
             service.AddCity(newType);
 
-            MessageBox.Show("New olymp type added.");
+            MessageBox.Show("New city added.");
         }       
     }
 }
