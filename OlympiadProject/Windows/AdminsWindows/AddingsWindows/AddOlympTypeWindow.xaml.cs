@@ -21,7 +21,7 @@ namespace OlympiadProject.Windows.AdminsWindows
     /// </summary>
     public partial class AddOlympTypeWindow : Window
     {
-        public string Name { get; set; }
+        public string Name_ { get; set; }
 
         public AddOlympTypeWindow()
         {
@@ -33,14 +33,14 @@ namespace OlympiadProject.Windows.AdminsWindows
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             OlympType newType = new OlympType();
-            newType.Name = Name;
+            newType.Name = Name_;
 
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
             foreach (var type in GettingService.GetOlympTypes())
             {
-                if(type.Name == Name)
+                if(type.Name == Name_)
                 {
-                    MessageBox.Show($"{Name} type alredy exists.");
+                    MessageBox.Show($"{Name_} type alredy exists.");
                     return;
                 }
             }

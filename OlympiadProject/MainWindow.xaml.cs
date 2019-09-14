@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro;
 using MahApps.Metro.Controls;
+using OlympiadDatabase.Migrations;
 using OlympiadProject.Windows;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace OlympiadProject
         public MainWindow()
         {
             InitializeComponent();
+            
             InitUI();
 
             test.Add(new MedalStandings() { Number = 1,Country = "Ukraine",Golds = 13,Sereb = 14,Bronz = 10,All = 37 });
@@ -85,7 +87,9 @@ namespace OlympiadProject
         {
             SecretWindow window = new SecretWindow();
 
+            this.Hide();
             window.ShowDialog();
+            this.Show();
         }
 
 

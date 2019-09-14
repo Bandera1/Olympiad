@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympiadProject.Windows.AdminsWindows"
         mc:Ignorable="d"
-        Title="Add olymp type" ResizeMode="NoResize" Height="178.5" Width="400">
+        Title="Add olymp type" ResizeMode="NoResize" Height="185" Width="400">
     <StackPanel>
         <TextBlock Text="Add olymp type" FontSize="22" HorizontalAlignment="Center"/>
         <TextBlock Text="Olymp type name" FontSize="16" Margin="5"/>
-        <TextBox Margin="5" Text="{Binding Name}"/>
+        <TextBox Margin="5" Text="{Binding Name_}"/>
         <Button Content="Add olymp type"  Margin="10" FontSize="20" Click="Add_Click"/>
     </StackPanel>
 </Window>

@@ -12,5 +12,9 @@ namespace OlympiadDatabase.Classes
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
+        [Required]
+        public int CountryID { get; set; }
+
+        public virtual Country Country { get; set; }
     }
 }

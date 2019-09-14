@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympiadProject.Windows.AdminsWindows.AddingsWindows"
         mc:Ignorable="d"
-        Title="Add olymp result" ResizeMode="NoResize" Height="355" Width="400">
+        Title="Add olymp result" ResizeMode="NoResize" Height="360" Width="400">
     <StackPanel>
         
         <TextBlock Text="Olympiad" FontSize="16" Margin="3" HorizontalAlignment="Center"/>

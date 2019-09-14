@@ -3,6 +3,7 @@ using MahApps.Metro.Controls;
 using OlympiadDatabase.Classes;
 using OlympiadDatabase.Service;
 using OlympiadProject.Windows.AdminsWindows;
+using OlympiadProject.Windows.AdminsWindows.AddingsWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,26 +80,82 @@ namespace OlympiadProject.Windows
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-            }          
+            }
 
             TopCountsStackPanel.DataContext = TablesCounts;
         }
 
+
+
         private void AddOlympTypeClick(object sender, RoutedEventArgs e)
         {
             AddOlympTypeWindow window = new AddOlympTypeWindow();
-
-            window.ShowDialog();              
+            window.ShowDialog();
+            InitUI();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddCountryWindow window = new AddCountryWindow();
+            window.ShowDialog();
+            InitUI();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddCityWindow window = new AddCityWindow();
+            window.ShowDialog();
+            InitUI();
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            AddSportTypeWindow window = new AddSportTypeWindow();
+            window.ShowDialog();
+            InitUI();
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                AddPersonWindow window = new AddPersonWindow();
+                window.ShowDialog();              
+            }
+            catch (Exception)
+            {
+            }
+            InitUI();
+        }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                AddOlympTypeWindow window = new AddOlympTypeWindow();
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {
+            }
+            InitUI();   
+        }
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                AddOlympResultNode window = new AddOlympResultNode();
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {
+            }          
+            InitUI();
         }
     }
 
     public class TestClass
-    {     
-        public int OlympiadName { get; set; }      
-        public int SportTypeName { get; set; }       
-        public int CityName { get; set; }   
-        public int PersonName { get; set; }       
-        public int Place { get; set; }       
+    {
+        public int OlympiadName { get; set; }
+        public int SportTypeName { get; set; }
+        public int CityName { get; set; }
+        public int PersonName { get; set; }
+        public int Place { get; set; }
     }
     public class TablesCounts
     {

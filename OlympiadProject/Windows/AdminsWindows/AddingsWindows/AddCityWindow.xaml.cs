@@ -21,11 +21,21 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
     /// </summary>
     public partial class AddCityWindow : Window
     {
-        public string Name { get; set; }
+        public string Name_ { get; set; }
 
         public AddCityWindow()
         {
             InitializeComponent();
+
+            GetPropForSelectedService getService = new GetPropForSelectedService();
+
+            if(getService.GetCountry(true).Count <= 0)
+            {
+                MessageBox.Show("Add country first.");
+                return;
+            }
+
+            CountryComboBox.ItemsSource = getService.GetCountry(false);
 
             this.DataContext = this;
         }
@@ -33,14 +43,15 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             City newType = new City();
-            newType.Name = Name;
+            newType.Name = Name_;
+            newType.Country = (CountryComboBox.SelectedItem as Country);
 
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
             foreach (var type in GettingService.GetCities())
             {
-                if (type.Name == Name)
+                if (type.Name == Name_)
                 {
-                    MessageBox.Show($"{Name} type alredy exists.");
+                    MessageBox.Show($"{Name_} type alredy exists.");
                     return;
                 }
             }
@@ -49,6 +60,6 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             service.AddCity(newType);
 
             MessageBox.Show("New olymp type added.");
-        }
+        }       
     }
 }

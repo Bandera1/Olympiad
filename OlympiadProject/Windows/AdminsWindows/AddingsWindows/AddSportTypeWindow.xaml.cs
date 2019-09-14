@@ -21,7 +21,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
     /// </summary>
     public partial class AddSportTypeWindow : Window
     {
-        public string Name { get; set; }
+        public string Name_ { get; set; }
 
         public AddSportTypeWindow()
         {
@@ -31,14 +31,14 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SportType newType = new SportType();
-            newType.Name = Name;
+            newType.Name = Name_;
 
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
             foreach (var type in GettingService.GetSportTypes())
             {
-                if (type.Name == Name)
+                if (type.Name == Name_)
                 {
-                    MessageBox.Show($"{Name} type alredy exists.");
+                    MessageBox.Show($"{Name_} type alredy exists.");
                     return;
                 }
             }

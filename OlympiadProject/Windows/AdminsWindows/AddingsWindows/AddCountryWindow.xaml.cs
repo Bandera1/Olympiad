@@ -21,7 +21,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
     /// </summary>
     public partial class AddCountryWindow : Window
     {
-        public string Name { get; set; }
+        public string Name_ { get; set; }
 
         public AddCountryWindow()
         {
@@ -33,14 +33,14 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             Country newType = new Country();
-            newType.Name = Name;
-
+            newType.Name = Name_;
+          
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
             foreach (var type in GettingService.GetCountry())
             {
-                if (type.Name == Name)
+                if (type.Name == Name_)
                 {
-                    MessageBox.Show($"{Name} alredy exists.");
+                    MessageBox.Show($"{Name_} alredy exists.");
                     return;
                 }
             }

@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympiadProject.Windows.AdminsWindows"
         mc:Ignorable="d"
-        Title="Add city" ResizeMode="NoResize" Height="178.5" Width="400">
+        Title="Add city" ResizeMode="NoResize" Height="240" Width="400">
     <StackPanel>
         <TextBlock Text="Add city" FontSize="22" HorizontalAlignment="Center"/>
+        <TextBlock Text="Country" FontSize="16" Margin="3" HorizontalAlignment="Center"/>
+        <ComboBox Name="CountryComboBox" Width="300">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBlock Text="City name" FontSize="16" Margin="5"/>
-        <TextBox Margin="5" Text="{Binding Name}"/>
+        <TextBox Margin="5" Text="{Binding Name_}"/>
         <Button Content="Add city"  Margin="10" FontSize="20" Click="Add_Click"/>
     </StackPanel>
 </Window>
