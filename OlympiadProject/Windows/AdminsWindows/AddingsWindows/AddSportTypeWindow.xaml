@@ -1,0 +1,15 @@
+﻿<Window x:Class="OlympiadProject.Windows.AdminsWindows.AddingsWindows.AddSportTypeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OlympiadProject.Windows.AdminsWindows"
+        mc:Ignorable="d"
+        Title="Add sport type" ResizeMode="NoResize" Height="178.5" Width="400">
+    <StackPanel>
+        <TextBlock Text="Add sport type" FontSize="22" HorizontalAlignment="Center"/>
+        <TextBlock Text="Sport type name" FontSize="16" Margin="5"/>
+        <TextBox Margin="5" Text="{Binding Name}"/>
+        <Button Content="Add sport type"  Margin="10" FontSize="20" Click="Button_Click"/>
+    </StackPanel>
+</Window>

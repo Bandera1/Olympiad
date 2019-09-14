@@ -71,8 +71,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\AdminsWindows\AddOlympTypeWindow.xaml.cs">
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddCityWindow.xaml.cs">
+      <DependentUpon>AddCityWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddCountryWindow.xaml.cs">
+      <DependentUpon>AddCountryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadService.xaml.cs">
+      <DependentUpon>AddOlympiadService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.xaml.cs">
+      <DependentUpon>AddOlympResultNode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddOlympTypeWindow.xaml.cs">
       <DependentUpon>AddOlympTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddSportTypeWindow.xaml.cs">
+      <DependentUpon>AddSportTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminsWindows\AddingsWindows\AddPersonWindow.xaml.cs">
+      <DependentUpon>AddPersonWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AdminsWindows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
@@ -92,7 +110,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\AdminsWindows\AddOlympTypeWindow.xaml">
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddCityWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddCountryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddOlympiadService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddOlympTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddSportTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminsWindows\AddingsWindows\AddPersonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

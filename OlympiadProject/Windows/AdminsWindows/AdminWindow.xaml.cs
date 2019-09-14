@@ -58,30 +58,23 @@ namespace OlympiadProject.Windows
 
             try
             {
-                //GetCountsService<OlympType> getOlympTypeCount = new GetCountsService<OlympType>();
-                //TablesCounts.OlympTypesCount = getOlympTypeCount.GetCount();
-                //if (TablesCounts.OlympiadCount == null) TablesCounts.OlympiadCount = 0;
+                GetCountsService<OlympType> getOlympTypeCount = new GetCountsService<OlympType>();
+                TablesCounts.OlympTypesCount = getOlympTypeCount.GetCount();
 
-                //GetCountsService<Country> getCountryCount = new GetCountsService<Country>();
-                //TablesCounts.CountriesCount = getCountryCount.GetCount();
-                //if (TablesCounts.CountriesCount == null) TablesCounts.CountriesCount = 0;
+                GetCountsService<Country> getCountryCount = new GetCountsService<Country>();
+                TablesCounts.CountriesCount = getCountryCount.GetCount();
 
-                //GetCountsService<City> getCitiesCount = new GetCountsService<City>();
-                //TablesCounts.CitiesCount = getCitiesCount.GetCount();
-                //if (TablesCounts.CitiesCount == null) TablesCounts.CitiesCount = 0;
+                GetCountsService<City> getCitiesCount = new GetCountsService<City>();
+                TablesCounts.CitiesCount = getCitiesCount.GetCount();
 
-                //GetCountsService<SportType> getSportTypeCount = new GetCountsService<SportType>();
-                //TablesCounts.SportTypeCount = getSportTypeCount.GetCount();
-                //if (TablesCounts.SportTypeCount == null) TablesCounts.SportTypeCount = 0;
+                GetCountsService<SportType> getSportTypeCount = new GetCountsService<SportType>();
+                TablesCounts.SportTypeCount = getSportTypeCount.GetCount();
 
-                //GetCountsService<Person> getPersonCount = new GetCountsService<Person>();
-                //TablesCounts.PersonCount = getPersonCount.GetCount();
-                //if (TablesCounts.PersonCount == null) TablesCounts.PersonCount = 0;
+                GetCountsService<Person> getPersonCount = new GetCountsService<Person>();
+                TablesCounts.PersonCount = getPersonCount.GetCount();
 
-                //GetCountsService<Person> getOlympiadCount = new GetCountsService<Person>();
-                //TablesCounts.OlympiadCount = getOlympiadCount.GetCount();
-                //if (TablesCounts.OlympiadCount == null) TablesCounts.OlympiadCount = 0;
-
+                GetCountsService<Person> getOlympiadCount = new GetCountsService<Person>();
+                TablesCounts.OlympiadCount = getOlympiadCount.GetCount();
             }
             catch (Exception e)
             {

@@ -1,7 +1,13 @@
 ﻿
 FD:\GitHubRepos\Olympiad\OlympiadProject\App.xaml;;
 FD:\GitHubRepos\Olympiad\OlympiadProject\MainWindow.xaml;;
-FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddOlympTypeWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddCityWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddCountryWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddOlympiadService.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddOlympTypeWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddSportTypeWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddPersonWindow.xaml;;
 FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AdminWindow.xaml;;
 FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\SecretWindow.xaml;;
+FD:\GitHubRepos\Olympiad\OlympiadProject\Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.xaml;;
 

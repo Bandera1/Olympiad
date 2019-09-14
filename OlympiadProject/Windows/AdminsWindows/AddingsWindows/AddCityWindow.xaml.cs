@@ -14,16 +14,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace OlympiadProject.Windows.AdminsWindows
+namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
 {
     /// <summary>
-    /// Interaction logic for AddOlympTypeWindow.xaml
+    /// Interaction logic for AddCityWindow.xaml
     /// </summary>
-    public partial class AddOlympTypeWindow : Window
+    public partial class AddCityWindow : Window
     {
         public string Name { get; set; }
 
-        public AddOlympTypeWindow()
+        public AddCityWindow()
         {
             InitializeComponent();
 
@@ -32,14 +32,13 @@ namespace OlympiadProject.Windows.AdminsWindows
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            OlympType newType = new OlympType();
+            City newType = new City();
             newType.Name = Name;
 
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
-
-            foreach (var type in GettingService.GetSportTypes())
+            foreach (var type in GettingService.GetCities())
             {
-                if(type.Name == Name)
+                if (type.Name == Name)
                 {
                     MessageBox.Show($"{Name} type alredy exists.");
                     return;
@@ -47,9 +46,9 @@ namespace OlympiadProject.Windows.AdminsWindows
             }
 
             AddingService service = new AddingService();
-            service.AddOlympType(newType);
+            service.AddCity(newType);
 
-            MessageBox.Show("New olymp type added.");        
+            MessageBox.Show("New olymp type added.");
         }
     }
 }
