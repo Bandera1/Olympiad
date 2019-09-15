@@ -24,8 +24,7 @@ namespace OlympiadProject.Windows
     /// Interaction logic for AdminWindow.xaml
     /// </summary>
     public partial class AdminWindow : MetroWindow
-    {
-        List<TestClass> lists = new List<TestClass>();
+    {      
         TablesCounts TablesCounts;
 
 
@@ -37,8 +36,7 @@ namespace OlympiadProject.Windows
                                    ThemeManager.GetAccent("Blue"),
                                    ThemeManager.GetAppTheme("BaseLight"));
 
-
-            TestDataGrid.ItemsSource = lists;
+            
 
             InitUI();
         }
@@ -51,6 +49,7 @@ namespace OlympiadProject.Windows
         private void InitUI()
         {
             TopTablesCountInit();
+            OlympResultInit();
         }
 
         private void TopTablesCountInit()
@@ -74,7 +73,7 @@ namespace OlympiadProject.Windows
                 GetCountsService<Person> getPersonCount = new GetCountsService<Person>();
                 TablesCounts.PersonCount = getPersonCount.GetCount();
 
-                GetCountsService<Person> getOlympiadCount = new GetCountsService<Person>();
+                GetCountsService<Olympiad> getOlympiadCount = new GetCountsService<Olympiad>();
                 TablesCounts.OlympiadCount = getOlympiadCount.GetCount();
             }
             catch (Exception e)
@@ -84,7 +83,28 @@ namespace OlympiadProject.Windows
 
             TopCountsStackPanel.DataContext = TablesCounts;
         }
+        private void OlympResultInit()
+        {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            var Results = service.GetOlympsResult();
 
+            List<OlympResultNodeTemplate> ResultsData = new List<OlympResultNodeTemplate>();
+
+            foreach (var r in Results)
+            {
+                OlympResultNodeTemplate node = new OlympResultNodeTemplate();
+
+                node.OlympiadName = $"{r.Olympiad.Type.Name} olympiad in {r.Olympiad.Country.Name} {String.Format("{0:y}", r.Olympiad.Date)}";
+                node.PersonName = $"{r.Person.FirstName} {r.Person.SecondName} {r.Person.ThirdName}";
+                node.SportTypeName = r.SportType.Name;
+                node.Place = r.Place;
+
+                ResultsData.Add(node);
+            }
+
+            OlympResultDataGrid.ItemsSource = ResultsData;
+
+        }
 
 
         private void AddOlympTypeClick(object sender, RoutedEventArgs e)
@@ -167,12 +187,11 @@ namespace OlympiadProject.Windows
         }
     }
 
-    public class TestClass
+    public class OlympResultNodeTemplate
     {
-        public int OlympiadName { get; set; }
-        public int SportTypeName { get; set; }
-        public int CityName { get; set; }
-        public int PersonName { get; set; }
+        public string OlympiadName { get; set; }
+        public string SportTypeName { get; set; }        
+        public string PersonName { get; set; }
         public int Place { get; set; }
     }
     public class TablesCounts

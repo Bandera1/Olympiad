@@ -26,13 +26,15 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         public AddSportTypeWindow()
         {
             InitializeComponent();
+
+            this.DataContext = this;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SportType newType = new SportType();
             newType.Name = Name_;
-
+            
             GetPropForSelectedService GettingService = new GetPropForSelectedService();
             foreach (var type in GettingService.GetSportTypes())
             {

@@ -49,13 +49,19 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             OlympResult newType = new OlympResult();
+            GetPropForSelectedService getService = new GetPropForSelectedService();
 
-            newType.Olympiad = OlympiadComboBox.SelectedItem as Olympiad;
-            newType.SportType = SportTypeComboBox.SelectedItem as SportType;
-            newType.Person = PersonComboBox.SelectedItem as Person;
+
+            newType.OlympID = getService.GetOlympiads().FirstOrDefault(x => x.Date == (OlympiadComboBox.SelectedItem as Olympiad).Date).ID;
+            newType.SportTypeID = getService.GetSportTypes().FirstOrDefault(x => x.Name == (OlympiadComboBox.SelectedItem as SportType).Name).ID;
+
+            newType.PersonID = getService.GetPersons().FirstOrDefault(x => x.FirstName == (OlympiadComboBox.SelectedItem as Person).FirstName 
+            && x.SecondName == (OlympiadComboBox.SelectedItem as Person).SecondName 
+            && x.ThirdName == (OlympiadComboBox.SelectedItem as Person).ThirdName).ID;
+
             newType.Place = Convert.ToInt32(PlaceTextBox.Text);
 
-            GetPropForSelectedService getService = new GetPropForSelectedService();
+            
             foreach (var or in getService.GetOlympsResult())
             {
                 if(or.Olympiad.Date == newType.Olympiad.Date)
@@ -114,7 +120,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
 
             foreach (var o in Olymps)
             {
-                returnList.Add(new TemplateOlympiadName() { Name = $"{o.Type.Name} in {o.Country.Name} {o.Date.ToString("0:y")}" });
+                returnList.Add(new TemplateOlympiadName() { Name = $"{o.Type.Name} olympiad in {o.Country.Name} {String.Format("{0:y}", o.Date)}" });
             }
 
             return returnList;

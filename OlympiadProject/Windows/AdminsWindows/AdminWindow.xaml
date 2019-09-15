@@ -6,7 +6,7 @@
         xmlns:Metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:OlympiadProject.Windows"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="550" ResizeMode="NoResize">
+        Title="AdminWindow" Height="450" Width="650" ResizeMode="NoResize">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -17,7 +17,7 @@
             <StackPanel Name="TopCountsStackPanel" Grid.Row="0" Height="40" Orientation="Horizontal" VerticalAlignment="Top" Background="GhostWhite">
                 <StackPanel.Resources>
                     <Style TargetType="TextBlock">
-                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="FontSize" Value="15"/>
                         <Setter Property="HorizontalAlignment" Value="Center"/>
                         <Setter Property="VerticalAlignment" Value="Center"/>
 
@@ -44,7 +44,7 @@
                 <TextBlock Text="{Binding OlympiadCount}" Foreground="Green" Margin="3"/>
             </StackPanel>
 
-            <DataGrid Grid.Row="1" Name="TestDataGrid" 
+            <DataGrid Grid.Row="1" Name="OlympResultDataGrid" 
                   CanUserResizeColumns="False" 
                   CanUserResizeRows="False" 
                   IsReadOnly="True" 
@@ -52,17 +52,17 @@
                   HorizontalAlignment="Stretch" 
                   AutoGenerateColumns="False" 
                   HorizontalGridLinesBrush="DarkGray" 
-                  AlternatingRowBackground="White">
+                  AlternatingRowBackground="White"
+                  ScrollViewer.CanContentScroll="True">
                 <DataGrid.Resources>
                     <Style TargetType="DataGrid">
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Olympiad" Binding="{Binding Path=Int}" Width="1*"/>
-                    <DataGridTextColumn Header="Sport type" Binding="{Binding Path=Lol}"  Width="1*"/>
-                    <DataGridTextColumn Header="City" Binding="{Binding Path=S}" Width="1*"/>
-                    <DataGridTextColumn Header="Person" Binding="{Binding Path=S}" Width="1*"/>
-                    <DataGridTextColumn Header="Place" Binding="{Binding Path=S}" Width="1*"/>
+                    <DataGridTextColumn Header="Olympiad" Binding="{Binding OlympiadName}" Width="1.2*"/>
+                    <DataGridTextColumn Header="Sport type" Binding="{Binding SportTypeName}"  Width="0.5*"/>
+                    <DataGridTextColumn Header="Person" Binding="{Binding PersonName}" Width="1*"/>
+                    <DataGridTextColumn Header="Place" Binding="{Binding Place}" Width="0.2*"/>
                 </DataGrid.Columns>
             </DataGrid>
 

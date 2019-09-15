@@ -27,7 +27,8 @@ namespace OlympiadDatabase.Classes
 
 
         public virtual Olympiad Olympiad { get; set; }
-        public virtual OlympType OlympiadType { get; set; }
+        //DELETE!!!
+        //public virtual OlympType OlympiadType { get; set; }
         public virtual SportType SportType { get; set; }
         //public virtual City City { get; set; }
         public virtual Person Person { get; set; }

@@ -35,7 +35,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
 
 
             GetPropForSelectedService service = new GetPropForSelectedService();
-            Countries = service.GetCountry(false);
+            Countries = service.GetCountry(true);
 
             if (Countries.Count <= 0)
             {
@@ -80,7 +80,7 @@ namespace OlympiadProject.Windows.AdminsWindows.AddingsWindows
             newType.FirstName = FirstName;
             newType.SecondName = SecondName;
             newType.ThirdName = ThirdName;
-            newType.Country = getService.GetCountry(false).FirstOrDefault(x => x.Name == (CountryComboBox.SelectedItem as Country).Name);
+            newType.CountryID = getService.GetCountry(false).FirstOrDefault(x => x.Name == (CountryComboBox.SelectedItem as Country).Name).ID;
             newType.DateOfBirth = DatePicker.SelectedDate.Value;
             newType.PhotoPath = PhotoPath;
 
