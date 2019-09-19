@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympiadProject"
         mc:Ignorable="d"
-        Title="Olympiad view" Height="500" Width="840">
+        Title="Olympiad view" Height="500" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*" MaxWidth="300" MinWidth="100"/>
@@ -104,7 +104,7 @@
                 
                 
                 <TextBlock Text="Sports Medalists" HorizontalAlignment="Center" FontWeight="Regular" FontSize="25" Margin="2"/>
-                <ComboBox Name="StatStore_SportsMedalistComboBox" Width="250"/>
+                <ComboBox Name="StatStore_SportsMedalistComboBox" Width="250" SelectionChanged="StatStore_SportsMedalistComboBox_SelectionChanged"/>
                 <Grid Name="StatStore_SportsMedalistGrid" Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -156,7 +156,7 @@
 
 
                 <TextBlock Text="Team stats" HorizontalAlignment="Center" FontWeight="Regular" FontSize="25" Margin="2"/>
-                <ComboBox Name="StatStore_TeamStatsCountryComboBox" Width="250"/>
+                <ComboBox Name="StatStore_TeamStatsCountryComboBox" Width="250" SelectionChanged="StatStore_TeamStatsCountryComboBox_SelectionChanged"/>
                 <Grid Name="StatStore_TeamStatsGrid" Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="205"/>
@@ -183,7 +183,7 @@
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="25"/>
                                     <ColumnDefinition Width="175"/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -223,12 +223,12 @@
                 <Separator Margin="5"/>
                                
                 <TextBlock Text="Athlete record holder" HorizontalAlignment="Center"/>
-                <ComboBox Name="StatStore_RecodHolderComboBOx" Width="200" Margin="5"/>
-                <TextBlock Name="StatStore_RecodHolderTextBlock" Text="Vlad Negodiyk" Foreground="GreenYellow" FontWeight="Bold" HorizontalAlignment="Center"/>
+                <ComboBox Name="StatStore_RecodHolderComboBOx" Width="200" Margin="5" SelectionChanged="StatStore_RecodHolderComboBOx_SelectionChanged"/>
+                <TextBlock Name="StatStore_RecodHolderTextBlock" Foreground="GreenYellow" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <Separator Margin="5"/>
 
                 <TextBlock Text="Composition of the olympiad team" HorizontalAlignment="Center"/>
-                <ComboBox Name="StatStore_CompositionOfOlympTeamComboBox" Width="200" Margin="5"/>
+                <ComboBox Name="StatStore_CompositionOfOlympTeamComboBox" Width="200" Margin="5" SelectionChanged="StatStore_CompositionOfOlympTeamComboBox_SelectionChanged"/>
             </StackPanel>
         </Metro:Flyout>
         <Button Name="ChangeThemeButton" Click="ChangeThemeButton_Click" Margin="14" Width="20" Height="20" Background="LightGray" Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"/>

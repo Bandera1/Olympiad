@@ -26,11 +26,12 @@ namespace OlympiadProject
     public partial class MainWindow : MetroWindow
     {
         private bool Theme = true;
-       
-        public List<SportMedal> medals = new List<SportMedal>();
+     
         public List<TeamStat> stats = new List<TeamStat>();
 
         private Olympiad CurrentOlympaid = null;
+
+
 
         public MainWindow()
         {
@@ -38,18 +39,13 @@ namespace OlympiadProject
             InitStartUpUI();
             MainStackPanel.Visibility = Visibility.Hidden;
 
-            medals.Add(new SportMedal() { Number = 1, Country = "France", AllName = "Zan Shirak" });
-            StatStore_SportsMedalistListBox.ItemsSource = medals;
-
-
-
-            stats.Add(new TeamStat() { Number = 1, Sport = "Sport", AllName = "Vlad Negodiyk", Place = 11 });
-            StatStore_TeamStatsListBox.ItemsSource = stats;           
+            //stats.Add(new TeamStat() { Number = 1, Sport = "Sport", AllName = "Vlad Negodiyk", Place = 11 });
+            //StatStore_TeamStatsListBox.ItemsSource = stats;
         }
 
-        
 
-        
+
+
 
         private void ChangeThemeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -69,7 +65,7 @@ namespace OlympiadProject
                                    ThemeManager.GetAppTheme("BaseLight"));
                 (sender as Button).Background = Brushes.DarkGray;
             }
-           
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -92,8 +88,8 @@ namespace OlympiadProject
             InitLockButton();
         }
         private void InitContentUI()
-        {          
-            InitTopBlock();          
+        {
+            InitTopBlock();
             InitMedalStandings();
             InitSportsMedalists();
             InitTeamStats();
@@ -134,7 +130,7 @@ namespace OlympiadProject
             StatStore_OlympName.Text = $"{CurrentOlympaid.Type.Name} olympiad";
             StatStore_OlympCountry.Text = $"{CurrentOlympaid.Country.Name}";
             StatStore_OlympYear.Text = $"{String.Format("{0:y}", CurrentOlympaid.Date)}";
-        }    
+        }
         private void InitMedalStandings()
         {
             List<MedalStandings> MedalsStanding = new List<MedalStandings>();
@@ -143,13 +139,16 @@ namespace OlympiadProject
             List<string> bufCountries = service.GetOlympsResult().Where(x => x.Olympiad.Date == CurrentOlympaid.Date).GroupBy(x => x.Person.Country.Name).Select(g => g.Key).ToList();
             var OlympRes = service.GetOlympsResult().Where(x => x.Olympiad.Date == CurrentOlympaid.Date);
 
+            if (OlympRes == null)
+                return;
+
             for (int i = 0; i < bufCountries.Count; i++)
             {
                 MedalStandings bufMedal = new MedalStandings();
-            
+
                 bufMedal.Country = bufCountries[i];
                 bufMedal.Golds = OlympRes.Where(x => x.Person.Country.Name == bufMedal.Country && x.Place == 1).Count();
-                bufMedal.Sereb = OlympRes.Where(x => x.Person.Country.Name == bufMedal.Country && x.Place == 2).Count(); ;    
+                bufMedal.Sereb = OlympRes.Where(x => x.Person.Country.Name == bufMedal.Country && x.Place == 2).Count(); ;
                 bufMedal.Bronz = OlympRes.Where(x => x.Person.Country.Name == bufMedal.Country && x.Place == 3).Count();
                 bufMedal.All = bufMedal.Golds + bufMedal.Sereb + bufMedal.Bronz;
 
@@ -160,24 +159,17 @@ namespace OlympiadProject
 
             for (int i = 0; i < MedalStandingsListBox.Items.Count; i++)
             {
-                (MedalStandingsListBox.Items[i] as MedalStandings).Number = i+1;
+                (MedalStandingsListBox.Items[i] as MedalStandings).Number = i + 1;
             }
         }
         private void InitSportsMedalists()
-        {            
+        {
             GetPropForSelectedService service = new GetPropForSelectedService();
 
-            var sports = service.GetOlympsResult().Where(x => x.Olympiad.Date == CurrentOlympaid.Date).GroupBy(x => x.SportType).Select(g => g.Key).ToList();
-            List<string> Sports = new List<string>();
-
-            for (int i = 0; i < sports.Count; i++)
-            {
-                Sports.Add(sports[i].Name);
-            }          
-
+            List<string> sports = service.GetOlympsResult().Where(x => x.Olympiad.Date == CurrentOlympaid.Date).GroupBy(x => x.SportType.Name).Select(x => x.Key).ToList();
             try
             {
-                StatStore_SportsMedalistComboBox.ItemsSource = Sports;
+                StatStore_SportsMedalistComboBox.ItemsSource = sports;
                 StatStore_SportsMedalistComboBox.SelectedItem = StatStore_SportsMedalistComboBox.Items[0];
             }
             catch (Exception)
@@ -207,21 +199,160 @@ namespace OlympiadProject
             //    Count = group.Count()
             //}).OrderByDescending(x => x.Count).Select(x => x.Count).ToList();
 
-            var count = service.GetOlympsResult().GroupBy(x => x.Person.Country).Select(group => new
-            {
-                Count = group.Count()
-            }).Select(x => x.Count);
+            //var count = service.GetOlympsResult().GroupBy(x => x.Person.Country).Select(group => new
+            //{
+            //    Count = group.Count()
+            //}).Select(x => x.Count);
 
-            MessageBox.Show(count.First().ToString());
+            var country = service.GetOlympsResult().GroupBy(x => x.Person.Country.Name).OrderByDescending(x => x.Count()).First();
+            StatStore_ThemeMostHostTextBlock.Text = country.Key;
+
 
         }
         private void InitAthleteRecord()
         {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            var bufSports = service.GetOlympsResult().GroupBy(x => x.SportType.Name).Select(x => x.Key).ToList();
 
+            try
+            {
+                StatStore_RecodHolderComboBOx.ItemsSource = bufSports;
+                StatStore_RecodHolderComboBOx.SelectedItem = bufSports[0];
+            }
+            catch (Exception)
+            {
+            }
         }
         private void InitCompositionOfOlympTeam()
         {
+            GetPropForSelectedService service = new GetPropForSelectedService();
 
+            List<string> countries = service.GetOlympsResult().GroupBy(x => x.Person.Country.Name).Select(x => x.Key).OrderByDescending(x => x.Count()).ToList();
+
+            try
+            {
+                StatStore_CompositionOfOlympTeamComboBox.ItemsSource = countries;
+                StatStore_CompositionOfOlympTeamComboBox.SelectedItem = countries[0];
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
+
+        private void LoadSportsMedalists(string Sport)
+        {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            List<SportMedal> sportsMedals = new List<SportMedal>();
+
+            var Res = service.GetOlympsResult().Where(x => x.Olympiad.Date == CurrentOlympaid.Date && x.SportType.Name == Sport && x.Place == 1).Select(x => x.Person).ToList();
+
+            if (Res == null)
+                return;
+
+            foreach (var p in Res)
+            {
+                SportMedal sportMedal = new SportMedal();
+
+                sportMedal.Country = p.Country.Name;
+                sportMedal.AllName = $"{p.FirstName} {p.SecondName} {p.ThirdName}";
+
+                sportsMedals.Add(sportMedal);
+            }
+
+
+            StatStore_SportsMedalistListBox.ItemsSource = sportsMedals.OrderByDescending(x => x.Country);
+
+            for (int i = 0; i < StatStore_SportsMedalistListBox.Items.Count; i++)
+            {
+                (StatStore_SportsMedalistListBox.Items[i] as SportMedal).Number = i + 1;
+            }
+        }    
+        private void LoadOlympaidTeamStats(string Team)
+        {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            List<TeamStat> TeamStats = new List<TeamStat>();
+
+            var Res = service.GetOlympsResult()
+                .Where(x => x.Person.Country.Name == Team)
+                .Select(x => new { x.Person, x.Place }).ToList();
+
+            List<string> SportTypes = service.GetOlympsResult().GroupBy(x => x.SportType).Select(x => x.Key.Name).ToList();
+
+            if (Res == null)
+                return;
+
+            for (int i = 0; i < Res.Count; i++)
+            {
+                TeamStat teamStat = new TeamStat();
+
+
+                teamStat.Sport = SportTypes[i];
+                teamStat.AllName = $"{Res[i].Person.FirstName}" +
+                    $" {Res[i].Person.SecondName} " +
+                    $"{Res[i].Person.ThirdName}";
+                teamStat.Place = Res[i].Place;
+
+                TeamStats.Add(teamStat);
+            }
+
+            //foreach (var s in Res)
+            //{
+            //    TeamStat teamStat = new TeamStat();
+           
+
+            //    teamStat.Sport = s.SportType.Name;
+            //    teamStat.AllName = $"{s.Person.FirstName}" +
+            //        $" {s.Person.SecondName} " +
+            //        $"{s.Person.ThirdName}";
+            //    teamStat.Place = s.Place;
+
+            //    TeamStats.Add(teamStat);
+            //}
+
+            if (TeamStats == null)
+                return;
+
+            StatStore_TeamStatsListBox.ItemsSource = TeamStats.OrderByDescending(x => x.Place);
+
+            for (int i = 0; i < StatStore_TeamStatsListBox.Items.Count; i++)
+            {
+                (StatStore_TeamStatsListBox.Items[i] as TeamStat).Number = i + 1;
+            }
+        }
+        private void LoadAthleteRecordHolder(string Sport)
+        {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            Person Res = service.GetOlympsResult().Where(x => x.SportType.Name == Sport && x.Place == 1).Select(x => x.Person).First();
+
+            string Holder;
+
+            if(Res == null)
+            {
+                Holder = "None";
+                StatStore_RecodHolderTextBlock.Text = Holder;
+                return;
+            }
+
+            Holder = $"{Res.FirstName} {Res.SecondName} {Res.ThirdName}";
+            StatStore_RecodHolderTextBlock.Text = Holder;
+        }
+        private void LoadCompositionOfOlympTeam(string Team)
+        {
+            GetPropForSelectedService service = new GetPropForSelectedService();
+            List<TeamStat> TeamStats = new List<TeamStat>();
+
+            var Res = service.GetOlympsResult().Where(x => x.Person.Country.Name == Team).GroupBy(x => new
+            {
+                x.Person,
+                x.Person.Country,
+                x.SportType
+            }).ToList();
+
+            CompositionOfOlympTeamWindow window =
+                new CompositionOfOlympTeamWindow(Team,Res.Select(x => x.Key.Person).ToList(), Res.Select(x => x.Key.SportType).ToList());
+            window.ShowDialog();
         }
 
         private void OlympiadTreeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -234,17 +365,40 @@ namespace OlympiadProject
             {
                 string bufName;
                 string gettingOlympName;
-                
+
                 bufName = ((sender as TreeView).SelectedItem as TreeViewItem).Header.ToString();
                 gettingOlympName = $"{o.Type.Name} olympiad in {o.Country.Name} {String.Format("{0:y}", o.Date)}";
 
                 if (bufName == gettingOlympName)
                     currOlympDate = o.Date;
+
+
             }
-            MainStackPanel.Visibility = Visibility.Visible;
+
+            if(CurrentOlympaid != null)
+                if (CurrentOlympaid.Date == currOlympDate)
+                    return;
 
             CurrentOlympaid = service.GetOlympiads().FirstOrDefault(x => x.Date == currOlympDate);
+
+            MainStackPanel.Visibility = Visibility.Visible;
             InitContentUI();
+        }
+        private void StatStore_SportsMedalistComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadSportsMedalists((sender as ComboBox).SelectedItem.ToString());
+        }
+        private void StatStore_TeamStatsCountryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadOlympaidTeamStats((sender as ComboBox).SelectedItem.ToString());
+        }
+        private void StatStore_RecodHolderComboBOx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadAthleteRecordHolder((sender as ComboBox).SelectedItem.ToString());
+        }        
+        private void StatStore_CompositionOfOlympTeamComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadCompositionOfOlympTeam((sender as ComboBox).SelectedItem.ToString());
         }
     }
 

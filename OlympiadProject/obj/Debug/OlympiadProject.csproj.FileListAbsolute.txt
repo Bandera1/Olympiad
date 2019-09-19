@@ -92,3 +92,5 @@ D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsW
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympResultNode.baml
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.g.cs
 D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\AdminsWindows\AddingsWindows\AddOlympiadWindow.baml
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\CompositionOfOlympTeamWindow.g.cs
+D:\GitHubRepos\Olympiad\OlympiadProject\obj\Debug\Windows\CompositionOfOlympTeamWindow.baml
